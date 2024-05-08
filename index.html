@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting Process</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        * {
+            padding: 0%;
+            margin: 0%;
+            background-color: cornflowerblue;
+        }
+        .hover-img {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .party {
+            position: relative;
+        }
+        .hover-img.active {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex justify-center items-center justify-items-center">
+    <div class="w-96 h-96 border-2 border-black border-solid rounded shadow-md">
+        <!-- janasena -->
+        <div class="janasena flex gap-10  justify-center items-center py-1"> 
+            <div class="party w-28 h-28 relative" onmouseover="showHoverImage(true, 'hoverImage1')" onmouseout="showHoverImage(false, 'hoverImage1')">
+                <img src="https://yt3.googleusercontent.com/QbguYO06Ovn22JXZ-UGfaatZToAbY1lCcpj3Ec2YNVLgiR5fqNGYTrPGOJzcP2IFSYQdfQafA7A=s900-c-k-c0x00ffffff-no-rj">
+
+                <img id="hoverImage1" class="hover-img" src="https://www.cinejosh.com/newsimg/newsmainimg/jsp-bjp-tie-up-pawan-to-get-2-honours_b_2408200844.jpg">
+
+            </div>
+            <div class="candidate w-28 h-28">
+                <img src="https://pbs.twimg.com/profile_images/1771609276311801856/uzw5rW8J_400x400.jpg">
+            </div>
+            <div>
+                <button class="bg-gray-800 text-white font-bold py-2 px-4 rounded" onclick="vote()">Do Vote</button>
+            </div>
+        </div>
+
+        <!-- tdp -->
+        <div class="janasena flex gap-10  justify-center items-center py-2"> 
+            <div class="party w-28 h-28 relative" onmouseover="showHoverImage(true, 'hoverImage2')" onmouseout="showHoverImage(false, 'hoverImage2')">
+
+                <img src="https://www.shutterstock.com/image-vector/cycling-line-pattern-banner-vector-260nw-2356443957.jpg">
+
+                <img id="hoverImage2" class="hover-img object-cover object-center" src="https://www.telugu360.com/te/wp-content/uploads/sites/2/2018/11/chandrababu.jpg">
+
+            </div>
+            <div class="candidate w-28 h-28">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYeIYdsW7ClrD-LVQLHHnVpfwJ1LoWnRIiILuJkXv3CA&s">
+            </div>
+            <div>
+                <button class="bg-gray-800 text-white font-bold py-2 px-4 rounded" onclick="vote()">Do Vote</button>
+            </div>
+        </div>
+
+        <!-- Ycp -->
+        <div class="janasena flex gap-10  justify-center items-center"> 
+            <div class="party w-28 h-28 relative" onmouseover="showHoverImage(true, 'hoverImage3')" onmouseout="showHoverImage(false, 'hoverImage3')">
+
+                <img src="https://assets.eenadu.net/article_img/ap-main3a_250.jpg">
+
+                <img id="hoverImage3" class="hover-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCk5Z3e6LFWdzEilpED4DD8XP222bUnOjJ-70JCjnJZw&s">
+
+            </div>
+            <div class="candidate w-28 h-28">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdQmQ3-HD7dV31jxIBZbS8WMp2CyX14HY8bFgsJ-lfOQ&s">
+            </div>
+            <div>
+                <button class="bg-gray-800 text-white font-bold py-2 px-4 rounded" onclick="vote()">Do Vote</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        function showHoverImage(isHover, id) {
+            var hoverImage = document.getElementById(id);
+            if (isHover) {
+                hoverImage.classList.add('active');
+            } else {
+                hoverImage.classList.remove('active');
+            }
+        }
+
+        function vote(){
+            alert("Thank You for Voting");
+        }
+    </script>
+</body>
+</html>
