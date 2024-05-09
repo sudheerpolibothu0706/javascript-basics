@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            background-color:crimson;
+        }
+        .wrapper{
+            display: flex;
+            justify-content: center;
+        }
+        .pic{
+            height: 400px;
+            width: 250px;
+            border: 2px solid black;
+            overflow: hidden;
+        }
+        .image{
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+        }
+        .active{
+            opacity: 1; 
+        }
+        #heading{
+            opacity: 1;
+        }
+        .remove{
+            display: none;
+        }
+        .btn{
+            height: 45px;
+            width: 100px;
+            margin-left: 15px;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="pic">
+            <h1 id="heading">Click the button to see an image</h1>
+            <img src="https://i.pinimg.com/736x/72/28/3f/72283f1e20cdfa00eded102b813f5457.jpg" class="image">
+        </div>
+        <button class="btn" onclick="show()">Click Here!</button>
+    </div>
+
+    <script>
+        function show(){
+            let img = document.querySelector(".image");
+            let heading = document.getElementById("heading");
+            if(img.classList.contains("active")){
+                img.classList.remove("active");
+                heading.classList.remove("remove");
+            }
+            else{
+                img.classList.add("active");
+                heading.classList.add("remove");
+            }
+        }
+    </script>
+</body>
+</html>
