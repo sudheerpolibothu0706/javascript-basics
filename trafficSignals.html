@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic-Signals</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .signals{
+            height: 250px;
+            width: 100px;
+            background-color: black;
+            border: 1px solid black;
+            border-radius: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .light{
+            width: 70px;
+            height: 70px;
+            border-radius: 50px;
+            border: 1px solid black;
+            background-color: gray;
+        }
+        .signal-names{
+            height: 250px;
+            width: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+        .heading{
+           font-size: 28px;
+           text-align: center;
+           margin-top: 50px;
+        }
+        .button{
+            height:13%;
+            width: 100%;
+            padding: 1rem;
+           
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        
+            <h3 class="heading">Traffic Signals Display</h3>
+            <button onclick="start()">start</button>
+            <button onclick="stop()">stop</button>
+        <div class="container">
+            
+           
+            <div class="signals">
+                <div class="light" id="red"></div>
+                <div class="light" id="yellow"></div>
+                <div class="light" id="green"></div>
+            </div>
+
+            <div class="signal-names">
+                <button class="button" onclick="red()">STOP</button>
+                <button class="button" onclick="yellow()">READY</button>
+                <button class="button" onclick="green()">GO</button>
+            </div>
+        </div>
+    </div>
+         
+    <script>
+
+
+
+      function red(){
+        document.getElementById("red").style.backgroundColor="red";
+        
+        document.getElementById("yellow").style.backgroundColor="gray";
+        document.getElementById("green").style.backgroundColor="gray";
+      }
+
+      function yellow(){
+        document.getElementById("red").style.backgroundColor="gray";
+        
+        document.getElementById("yellow").style.backgroundColor="yellow";
+        document.getElementById("green").style.backgroundColor="gray";
+      }
+      function green(){
+        document.getElementById("red").style.backgroundColor="gray";
+        
+        document.getElementById("yellow").style.backgroundColor="gray";
+        document.getElementById("green").style.backgroundColor="green";
+      }
+
+              
+
+    </script>
+</body>
+</html>
